@@ -11,6 +11,9 @@
 		21936BF22A44CCF000460EF0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21936BF12A44CCF000460EF0 /* ContentView.swift */; };
 		21936BF42A44CCF000460EF0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21936BF32A44CCF000460EF0 /* Assets.xcassets */; };
 		21936BF72A44CCF000460EF0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21936BF62A44CCF000460EF0 /* Preview Assets.xcassets */; };
+		21936BFE2A44CE1100460EF0 /* ChannelsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21936BFD2A44CE1100460EF0 /* ChannelsScreen.swift */; };
+		21936C002A44CE3100460EF0 /* PlaylistsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21936BFF2A44CE3100460EF0 /* PlaylistsScreen.swift */; };
+		21936C022A44CE5500460EF0 /* EventsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21936C012A44CE5500460EF0 /* EventsScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,9 @@
 		21936BF12A44CCF000460EF0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		21936BF32A44CCF000460EF0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		21936BF62A44CCF000460EF0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		21936BFD2A44CE1100460EF0 /* ChannelsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelsScreen.swift; sourceTree = "<group>"; };
+		21936BFF2A44CE3100460EF0 /* PlaylistsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaylistsScreen.swift; sourceTree = "<group>"; };
+		21936C012A44CE5500460EF0 /* EventsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +59,9 @@
 			children = (
 				21936BEF2A44CCF000460EF0 /* KKPlayerApp.swift */,
 				21936BF12A44CCF000460EF0 /* ContentView.swift */,
+				21936BFD2A44CE1100460EF0 /* ChannelsScreen.swift */,
+				21936BFF2A44CE3100460EF0 /* PlaylistsScreen.swift */,
+				21936C012A44CE5500460EF0 /* EventsScreen.swift */,
 				21936BF32A44CCF000460EF0 /* Assets.xcassets */,
 				21936BF52A44CCF000460EF0 /* Preview Content */,
 			);
@@ -138,7 +147,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				21936BF22A44CCF000460EF0 /* ContentView.swift in Sources */,
+				21936C002A44CE3100460EF0 /* PlaylistsScreen.swift in Sources */,
+				21936BFE2A44CE1100460EF0 /* ChannelsScreen.swift in Sources */,
 				21936BF02A44CCF000460EF0 /* KKPlayerApp.swift in Sources */,
+				21936C022A44CE5500460EF0 /* EventsScreen.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,8 +285,9 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -282,9 +295,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = seryakova.KKPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -302,8 +318,9 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -311,9 +328,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = seryakova.KKPlayer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
