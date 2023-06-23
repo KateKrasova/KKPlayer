@@ -20,7 +20,7 @@ struct ItemView: View {
 
         GeometryReader { reader in
 
-            let fontSize = min(reader.size.width * 0.2, 28)
+            let fontSize = min(reader.size.width * 0.15, 28)
             let imageWidth: CGFloat = min(50, reader.size.width * 0.6)
 
             VStack(spacing: 30) {
@@ -31,10 +31,12 @@ struct ItemView: View {
 
                 Text("\(item.name)")
                     .font(.system(size: fontSize))
-                    .foregroundColor(Color.yellow)
+                    .foregroundColor(Color.black)
+                    .multilineTextAlignment(.center)
+                    .lineLimit(2)
             }
             .frame(width: reader.size.width, height: reader.size.height)
-            .background(Color.red)
+            .background(Color.white)
             .clipShape(RoundedRectangle(cornerRadius: 10))
         }
         .frame(height: 170)
@@ -44,25 +46,20 @@ struct ItemView: View {
 struct ChannelsScreen: View {
 
     let items = [
-        Item(name: "text1", imageName: "heart"),
-        Item(name: "text2", imageName: "heart"),
-        Item(name: "text3", imageName: "heart"),
-        Item(name: "text4", imageName: "heart"),
-        Item(name: "text5", imageName: "heart"),
-        Item(name: "text6", imageName: "heart"),
-        Item(name: "text1", imageName: "heart"),
-        Item(name: "text2", imageName: "heart"),
-        Item(name: "text3", imageName: "heart"),
-        Item(name: "text4", imageName: "heart"),
-        Item(name: "text5", imageName: "heart"),
-        Item(name: "text6", imageName: "heart"),
-        Item(name: "text1", imageName: "heart"),
-        Item(name: "text2", imageName: "heart"),
-        Item(name: "text3", imageName: "heart"),
-        Item(name: "text4", imageName: "heart"),
-        Item(name: "text5", imageName: "heart"),
-        Item(name: "text6", imageName: "heart"),
-        Item(name: "text7", imageName: "heart")
+        Item(name: "Рекорд", imageName: "heart"),
+        Item(name: "Шашлыки", imageName: "bird"),
+        Item(name: "80-ые", imageName: "flame"),
+        Item(name: "Танцы шманцы", imageName: "car.rear.waves.up"),
+        Item(name: "Дискотека", imageName: "lizard"),
+        Item(name: "Чилл", imageName: "camera.macro"),
+        Item(name: "Сидим дома", imageName: "bubbles.and.sparkles"),
+        Item(name: "Для уборки", imageName: "bird"),
+        Item(name: "Утро", imageName: "flame"),
+        Item(name: "Хиты", imageName: "bubbles.and.sparkles"),
+        Item(name: "Хаус", imageName: "camera.macro"),
+        Item(name: "Диско", imageName: "bird"),
+        Item(name: "Миксы", imageName: "car.rear.waves.up"),
+        Item(name: "Русский реп", imageName: "lizard")
     ]
 
     // не могу подставить почему-то, разобраться
@@ -76,52 +73,55 @@ struct ChannelsScreen: View {
 
     var body: some View {
         NavigationView {
-            ScrollView {
-                VStack {
-                    HStack {
+            ZStack {
+                ScrollView {
+                    VStack {
+                        HStack {
 
-                        Button {
-                            // код
-                        } label: {
-                            Image(systemName: "arrow.up.arrow.down")
+                            Button {
+                                // код
+                            } label: {
+                                Image(systemName: "arrow.up.arrow.down")
+                            }
+                            .padding(.all, 6)
+                            .background(Color.black)
+                            .clipShape(RoundedRectangle(cornerRadius: 5.0))
+
+
+                            Button {
+                                // код
+                            } label: {
+                                Image(systemName: "heart")
+                                Text("Избранное")
+
+                            }
+                            .padding(.all, 6)
+                            .background(Color.black)
+                            .clipShape(RoundedRectangle(cornerRadius: 5.0))
+
+                            Button {
+                                // код
+                            } label: {
+                                Image(systemName: "slider.horizontal.3")
+                                    .padding(.all, 6)
+                                    .background(Color.black)
+                                    .clipShape(RoundedRectangle(cornerRadius: 5.0))
+                            }
+                            Spacer()
                         }
-                        .padding(.all, 6)
-                        .background(Color.gray)
-                        .clipShape(RoundedRectangle(cornerRadius: 5.0))
+                        .padding()
 
-
-                        Button {
-                            // код
-                        } label: {
-                            Image(systemName: "heart")
-                            Text("Избранное")
-
+                        LazyVGrid(columns: columns, spacing: spacing) {
+                            ForEach(items) { item in
+                                ItemView(item: item)
+                            }
                         }
-                        .padding(.all, 6)
-                        .background(Color.gray)
-                        .clipShape(RoundedRectangle(cornerRadius: 5.0))
-
-                        Button {
-                            // код
-                        } label: {
-                            Image(systemName: "slider.horizontal.3")
-                                .padding(.all, 6)
-                                .background(Color.gray)
-                                .clipShape(RoundedRectangle(cornerRadius: 5.0))
-                        }
-                        Spacer()
+                        .padding()
+                        .offset(y: -20)
                     }
-                    .padding()
-
-                    LazyVGrid(columns: columns, spacing: spacing) {
-                        ForEach(items) { item in
-                            ItemView(item: item)
-                        }
-                    }
-                    .padding()
-                    .offset(y: -20)
                 }
             }
+            .background(Color.gray)
 
                 .navigationTitle("Радиоканалы")
 
@@ -131,7 +131,7 @@ struct ChannelsScreen: View {
                 }) {
                     Image(systemName: "magnifyingglass")
                 })
-                .tint(.black)
+                .tint(.white)
         }
     }
 }
